@@ -41,7 +41,7 @@ sha2 = "0.9"
 sha3 = "0.8"
 text_io = "0.1"
 toml = "0.5"
-tree_magic = "0.2"
+tree_magic_mini = "1.0"
 wana_kana = "2.0"
 zip = "0.5"
 

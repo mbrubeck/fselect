@@ -1281,9 +1281,9 @@ impl Searcher {
                 }
             },
             Field::Mime => {
-                let mime = tree_magic::from_filepath(&entry.path());
+                let mime = tree_magic_mini::from_filepath(&entry.path());
 
-                return Variant::from_string(&mime);
+                return Variant::from_string(mime);
             },
             Field::IsBinary => {
                 self.update_file_metadata(entry);
@@ -1294,8 +1294,8 @@ impl Searcher {
                     }
                 }
 
-                let mime = tree_magic::from_filepath(&entry.path());
-                let is_binary = !is_text_mime(&mime);
+                let mime = tree_magic_mini::from_filepath(&entry.path());
+                let is_binary = !is_text_mime(mime);
 
                 return Variant::from_bool(is_binary);
             },
@@ -1308,8 +1308,8 @@ impl Searcher {
                     }
                 }
 
-                let mime = tree_magic::from_filepath(&entry.path());
-                let is_text = is_text_mime(&mime);
+                let mime = tree_magic_mini::from_filepath(&entry.path());
+                let is_text = is_text_mime(mime);
 
                 return Variant::from_bool(is_text);
             },
